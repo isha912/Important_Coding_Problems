@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long int a,b,c,n,k,maxnum,cut;
+    cin>>n>>a>>b>>c;
+
+    {
+          maxnum=0;
+       for(int i=0;i*a<=n;++i)
+       {
+           for(int j=0;i*a+j*b<=n;++j)
+           {
+                cut=n-i*a-j*b;
+                if(cut%c==0)
+                {
+                    k=cut/c;
+                maxnum=max(maxnum,i+j+k);}
+           }
+
+       }
+       cout<<maxnum<<endl;
+    }
+    return 0;
+}
